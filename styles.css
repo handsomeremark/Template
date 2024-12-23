@@ -515,7 +515,7 @@ nav {
   perspective: 1000;
 }
 
-.floating-badge {
+.floating-badge { 
   position: absolute;
   bottom: 2rem;
   right: 2rem;
@@ -3666,6 +3666,7 @@ nav {
       padding: 2rem;
     }
   }
+
 
   /* Extra large screens (1920px and up) */
   @media (min-width: 1920px) {
@@ -10923,7 +10924,7 @@ nav {
   .logo-text span {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -12296,6 +12297,7 @@ nav {
   margin: 0 auto;
   padding: 80px 20px;
   margin-top: 70px;
+
 }
 
 .contact-container {
@@ -12303,6 +12305,9 @@ nav {
   grid-template-columns: 1fr 1.5fr;
   gap: 3rem;
   margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 /* Contact Info Styles */
@@ -12395,6 +12400,9 @@ nav {
   padding: 3rem;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 1000px;
+  align-items:center;
+  justify-content: center;
 }
 
 .form-group {
@@ -13890,10 +13898,6 @@ p,
 
 .stat-item:nth-child(1) {
   animation-delay: 1.4s;
-}
-
-.stat-item:nth-child(2) {
-  animation-delay: 1.6s;
 }
 
 .stat-item:nth-child(3) {
