@@ -233,11 +233,18 @@ nav {
 
 /* Hamburger Menu */
 .hamburger {
-  display: none;
+  display: none; /* Hide by default */
   cursor: pointer;
   width: 30px;
   height: 20px;
   position: relative;
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show on mobile */
+  }
 }
 
 .hamburger span {
@@ -278,23 +285,23 @@ nav {
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
+@media (max-width: 768px) {
   nav {
-    padding: 1rem 2rem;
+    padding: 1rem; /* Adjust padding for mobile */
   }
 
   .hamburger {
-    display: block;
+    display: block; /* Ensure hamburger is visible */
     z-index: 100;
   }
 
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0; /* Align to the right */
     height: 100vh;
-    width: 100%;
-    max-width: 400px;
+    width: 100%; /* Full width */
+    max-width: 400px; /* Limit max width */
     background: hsl(157, 97%, 35%);
     backdrop-filter: blur(10px);
     flex-direction: column;
@@ -302,10 +309,11 @@ nav {
     align-items: center;
     transition: right 0.3s ease;
     padding: 2rem;
+    transform: translateX(100%); /* Start off-screen */
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(0); /* Slide in */
   }
 
   .nav-links li {
@@ -313,7 +321,7 @@ nav {
   }
 
   .nav-links a {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Increase font size for better readability */
   }
 }
 
@@ -325,6 +333,20 @@ nav {
   .politician-name {
     font-size: 1.2rem;
   }
+}
+
+
+@media (max-width: 360px) {
+  .nav-links {
+    width: 100%; 
+    padding: 20px; 
+  }
+
+  .hamburger {
+    width: 40px;
+    height: 30px; 
+  }
+
 }
 
 /* Home Section */
@@ -759,11 +781,18 @@ nav {
 
   /* Hamburger Menu */
   .hamburger {
-    display: none;
+    display: none; /* Hide by default */
     cursor: pointer;
     width: 30px;
     height: 20px;
     position: relative;
+  }
+
+  /* Show hamburger on mobile */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show on mobile */
+    }
   }
 
   .hamburger span {
@@ -803,24 +832,23 @@ nav {
     bottom: 40%;
   }
 
-  /* Responsive Design */
-  @media (max-width: 968px) {
+  @media (max-width: 768px) {
     nav {
-      padding: 1rem 2rem;
+      padding: 1rem; 
     }
 
     .hamburger {
-      display: block;
+      display: block; 
       z-index: 100;
     }
 
     .nav-links {
       position: fixed;
       top: 0;
-      right: -100%;
+      right: 0; 
       height: 100vh;
       width: 100%;
-      max-width: 400px;
+      max-width: 400px; 
       background: hsl(157, 97%, 35%);
       backdrop-filter: blur(10px);
       flex-direction: column;
@@ -828,10 +856,11 @@ nav {
       align-items: center;
       transition: right 0.3s ease;
       padding: 2rem;
+      transform: translateX(100%); 
     }
 
     .nav-links.active {
-      right: 0;
+      transform: translateX(0); 
     }
 
     .nav-links li {
@@ -839,7 +868,7 @@ nav {
     }
 
     .nav-links a {
-      font-size: 1.2rem;
+      font-size: 1.2rem; /* Increase font size for better readability */
     }
   }
 
@@ -4437,6 +4466,24 @@ nav {
 
     .view-more-btn:hover {
       background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  /* Add this to your existing CSS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards; /* Adjust duration and easing as needed */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
